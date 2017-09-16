@@ -1,4 +1,6 @@
 # ZuttoPets Design
+This is a WIP.
+
 ## Overview
 Every player begins the game with a plot of land upon which is built a small house. The player and their pets will reside on this plot of land.
 
