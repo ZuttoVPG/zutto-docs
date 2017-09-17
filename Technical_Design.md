@@ -41,7 +41,7 @@ A single 'trait' will correspond to one piece of artwork. To be available, it mu
 The same system can be used for player characters. The `pet_skin_traits` table may need to be either generic (along with `pet_skins`?), or we just make a separate `character_skin_traits` table with similar rows.
 
 #### Generating the Image
-As far as generating the images goes, there are two options I want to explore:
+As far as generating the images goes, there are two options I want to explore (and yes, this plays into the eternal [raster vs vector](https://designshack.net/articles/layouts/vector-vs-raster-what-do-i-use/) struggle)
 
 1. Typically, people just merge raster images together with Imagick server-side.
 1. A more mobile-friendly solution may instead be merging SVGs together. This can potentially be done client-side.
