@@ -32,7 +32,7 @@ It's likely a lot of pets will have the same configurations, so caching the resp
 The stand-alone nature of this service would also make it easy for other projects to reuse it or for us to demo it during a preview phase.
 
 #### Database
-To store this data and accomodate the skin system, we'll need to break the data storage up a bit:
+To store this data and accommodate the skin system, we'll need to break the data storage up a bit:
 
 ![Trait ER diagram](figures/trait_data_storage.png)
 
