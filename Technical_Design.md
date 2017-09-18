@@ -41,22 +41,16 @@ A single 'trait' will correspond to one piece of artwork. To be available, it mu
 The same system can be used for player characters. The `pet_skin_traits` table may need to be either generic (along with `pet_skins`?), or we just make a separate `character_skin_traits` table with similar rows.
 
 #### Generating the Image
-As far as generating the images goes, there are two options I want to explore (and yes, this plays into the eternal [raster vs vector](https://designshack.net/articles/layouts/vector-vs-raster-what-do-i-use/) struggle)
+As far as generating the images goes, the service will need to be aware of the consumer's screen resolution and DPI.
 
-1. Typically, people just merge raster images together with Imagick server-side.
-1. A more mobile-friendly solution may instead be merging SVGs together. This can potentially be done client-side.
+From there, it's just mangling assets into one image with Imagick. The layering and attachment point data will be sent in to the service.
 
-The benefit of the second option is that, since we're going to be offering a VN-like NPC dialogue screen, SVGs will magically scale appropriately for whatever device/screen resolution the user has (being vector images and all). Merging these client-side should be fairly trivial as well (although I am not sure that's the best approach).
+Once the attachments are all added, the image should be scaled according to the consuming client's resolution.
 
-The second perk to SVGs is merging probably won't harm animations. I'm not sure how well merging animated traits onto an animated pet skin would work with raster images -- I assume we'd have to go frame-by-frame? -- whereas with SVGs, each should be able to have its own little javascript snippet providing animations.
+Post-1.0, I would also like to add support for merging SVGs. This should enable us to have very responsive art assets for mobile and 4K displays, as well as having independently-animated base images and traits.
 
-The downside to the SVG approach is that we'll be using SVGs. Not having any appreciable artistic skills, I have no idea how the tooling (Photoshop/Sai/etc) will handle this stuff. If an artist likes Photoshop, does it have an easy way to turn their (presumably raster) image into a vector when saving? (Is that what Illustrator is for?)
-
-If we do want to do animated skins and/or traits, does the tooling make it easy for artists to do this? I know things can be animated by adding javascript into the SVG, but artists aren't going to approach this like a programmer would.
-
-If the tooling for artists to make SVGs is too complicated or limiting, we can do raster images instead, and have the addition of SVG handling as a post-1.0 feature.
-
-With the raster image approach, the microservice will also need to take in a scaling factor or viewport resolution so it can scale the image to an appropriate size for the user's device. This would make the caching layer a bit less effective.
+#### Tooling
+The microservice should ship with a static page that will allow artists to load up a base image and a number of attachments, drag the attachments around, and generate the coordinates for each attachment point for loading into the DB.
 
 ## Server
 - backups
