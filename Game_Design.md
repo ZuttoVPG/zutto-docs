@@ -21,8 +21,12 @@ The player character has a number of attributes:
 - Active job
 - NPC faction affiliation(s) and reputation
 
+I am not sure if stats are a good idea for the player character. I don't imagine stats will change all that much over time, and if they do, they'd only be going up. If we need stats on the PCs, I think they should come 100% from equipment and not be an inherent aspect of the player character.
+
 ### Job System
 The job system is modeled on games like Final Fantasy XIV's -- a single player character can unlock all available classes, but they are primarily limited to one active class.
+
+This prevents players from ever feeling like their initial class choice was bad, or that they will never be able to play a class-restricted quest, or anything of that nature. The entire game is always open to the player.
 
 Each job is progressed independently, and some jobs may require the player character to have already mastered other jobs.
 
