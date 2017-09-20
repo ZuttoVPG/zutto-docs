@@ -22,8 +22,8 @@ Roll tables will drive all of the RNG decisions. The tables can be configured an
 
 [todo insert ER diagram]
 
-### Pet Traits
-Pet traits can be shown visibly on the pet. For example, a 'Winged' trait may add some wings to the image. Instead of drawing a billion combinations of specie/skin/traits by hand, the system should be able to overlay traits onto the image.
+### Character Traits
+Traits can be shown visibly on the pet and/or player character. For example, a 'Winged' trait may add some wings to the image. Instead of drawing a billion combinations of specie/skin/traits by hand, the system should be able to overlay traits onto the image.
 
 This system would be an ideal candidate for existing as a standalone microservice. It would take in a skin image or URL (URL must be on a trusted domain list) and an array of traits with their image and attachment points.
 
@@ -48,6 +48,20 @@ From there, it's just mangling assets into one image with Imagick. The layering 
 Once the attachments are all added, the image should be scaled according to the consuming client's resolution.
 
 Post-1.0, I would also like to add support for merging SVGs. This should enable us to have very responsive art assets for mobile and 4K displays, as well as having independently-animated base images and traits.
+
+#### Recolouring
+Recolouring might be interesting, but on non-flat-colour planes, I'm not sure how easy that would be.
+
+I think we'd need three components to accomplish this: the base image, >=1 recolour channel mask images, and the colour shifts for each mask.
+
+If you want one recolour, you'd generate an overlay for the regions that should be recolured on the base image. Imagick (probably) has a method of selecting just those pixels where the mask overlaps, and then we'd have to shift them all.
+
+I am not sure how well that will work in practice.
+
+Some notes on compositing that might have relevant terminology:
+
+- https://stackoverflow.com/a/18387343/1101225
+
 
 #### Tooling
 The microservice should ship with a static page that will allow artists to load up a base image and a number of attachments, drag the attachments around, and generate the coordinates for each attachment point for loading into the DB.
