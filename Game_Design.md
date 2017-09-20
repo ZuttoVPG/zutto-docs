@@ -2,15 +2,43 @@
 This is a WIP.
 
 ## Overview
-Every player begins the game with a plot of land upon which is built a small house. The player and their pets will reside on this plot of land.
+Immediately after registering, the user must create a player character. There will be several options for both their race and their initial job. Each race can have different job options available.
 
-The game revolves around upgrading this plot of land to increase the number and types of pets they can have. The pets can, in turn, help the player create a bigger & better base.
+Every player character starts out with a plot of land upon which is built a small house. This is the home base for the player, containing both crafting benches / upgrades and valuable resources for harvesting.
 
-The goal of the game is to complete collections by ascending through tiers of crafting/pets/base structures. Completing collections will reward the players with things like rare pets, rare pet skins, large quantities of crafting materials, or the ability to craft more advanced things.
+The gameplay revolves around upgrading their to increase the number and types of pets they can have. The pets can, in turn, help the player create a bigger & better home. The resources generated from the player's home will fuel the combat system (crafting items/equipment).
+
+The goal of the game [[*is to complete collections by ascending through tiers of crafting/pets/base structures. Completing collections will reward the players with things like rare pets, rare pet skins, large quantities of crafting materials, or the ability to craft more advanced things.*]]
 
 To drive player engagement, the player will need to log in regularly to gather the resources (primary crafting materials) that have accumulated.  
 
-The game is intended to be a cross between an incremental game like Cookie Clicker and a classic pet game.
+The game is intended to be a cross between an incremental game like Cookie Clicker, a classic pet game, and a story-driven RPG.
+
+## Player Character
+The player character has a number of attributes:
+
+- Race
+- Active job
+- NPC faction affiliation(s) and reputation
+
+### Job System
+The job system is modeled on games like Final Fantasy XIV's -- a single player character can unlock all available classes, but they are primarily limited to one active class.
+
+Each job is progressed independently, and some jobs may require the player character to have already mastered other jobs.
+
+Swapping the active class may incur a cooldown.
+
+| Job               | Skills / Abilities  | Prereqs            |
+|:----------------- |:--------------------|:-------------------|
+| Hunter            | Hunter's Mark, increased chance to find foraged items | None |
+| Blacksmith        | Extra roll when crafting metal items | None |
+| Armoursmith       | Uses half the materials to craft armour | Blacksmith L5 |
+| Psychic           | Mind Crush          | PC is $psychic race |
+
+### Affiliation & Reputation
+Players can be liked/disliked by NPC factions. Some factions can be joined by the player.
+
+- group factions so they're mutually exclusive
 
 ## Pets
 Despite drawing heavily on incremental games, pets are _not_ merely workers. Each pet will have a name, equipment, skills, and potentially a skin.
