@@ -1,14 +1,14 @@
-# ZuttoPets Design
-This is a WIP.
+# ZuttoVPG Design
+Note that this document is a WIP.
 
 ## Overview
 Immediately after registering, the user must create a player character. There will be several options for both their race and their initial job. Each race can have different job options available.
 
 Every player character starts out with a plot of land upon which is built a small house. This is the home base for the player, containing both crafting benches / upgrades and valuable resources for harvesting.
 
-The gameplay revolves around upgrading their to increase the number and types of pets they can have. The pets can, in turn, help the player create a bigger & better home. The resources generated from the player's home will fuel the combat system (crafting items/equipment).
+The gameplay revolves around upgrading their to increase the number and types of pets they can have. The pets can, in turn, help the player create a bigger & better home. The resources generated from the player's home will fuel the combat system by providing materials to craft items/equipment.
 
-The goal of the game [[*is to complete collections by ascending through tiers of crafting/pets/base structures. Completing collections will reward the players with things like rare pets, rare pet skins, large quantities of crafting materials, or the ability to craft more advanced things.*]]
+The goal of the game [[@TODO: *is to complete collections by ascending through tiers of crafting/pets/base structures. Completing collections will reward the players with things like rare pets, rare pet skins, large quantities of crafting materials, or the ability to craft more advanced things.*]]
 
 To drive player engagement, the player will need to log in regularly to gather the resources (primary crafting materials) that have accumulated.  
 
@@ -18,10 +18,15 @@ The game is intended to be a cross between an incremental game like Cookie Click
 The player character has a number of attributes:
 
 - Race
-- Active job
+- Jobs with levels
+	- Active job
 - NPC faction affiliation(s) and reputation
 
-I am not sure if stats are a good idea for the player character. I don't imagine stats will change all that much over time, and if they do, they'd only be going up. If we need stats on the PCs, I think they should come 100% from equipment and not be an inherent aspect of the player character.
+No aspects of the player character's progression should depend on RNG. The player character is the user's avatar in the game; they only have one, and progressing it will be crucial to unlocking other gameplay systems. Nobody should ever be stuck hoping to roll a certain job trait in order to be 'optimal'. RNG should be used in other systems.
+
+Further, no character progression decisions should be permanently fixed in stone. The player only gets one character, and any 'bad' decisions they made before learning the game should be repairable without creating a brand-new account.
+
+[[@TODO *I am not sure if stats are a good idea for the player character. I don't imagine stats will change all that much over time, and if they do, they'd only be going up. If we need stats on the PCs, I think they should come 100% from equipment and not be an inherent aspect of the player character.*]]
 
 ### Job System
 The job system is modeled on games like Final Fantasy XIV's -- a single player character can unlock all available classes, but they are primarily limited to one active class.
@@ -39,13 +44,17 @@ Swapping the active class may incur a cooldown.
 | Armoursmith       | Uses half the materials to craft armour | Blacksmith L5 |
 | Psychic           | Mind Crush          | PC is $psychic race |
 
+Jobs level up individually, and only when they are the active job.
+
+The power level between different jobs should be kept somewhat similar. 'Advanced' jobs, or jobs that depend on maxing out other jobs, should offer alternative gameplay options instead of straight-up power boosts.
+
 ### Affiliation & Reputation
 Players can be liked/disliked by NPC factions. Some factions can be joined by the player.
 
 - group factions so they're mutually exclusive
 
 ## Pets
-Despite drawing heavily on incremental games, pets are _not_ merely workers. Each pet will have a name, equipment, skills, and potentially a skin.
+Despite drawing on incremental games, pets are _not_ merely workers. Each pet will have a name, equipment, skills, and potentially a skin.
 
 The number of pets actively kept on the player's base should be kept fairly small so that each pet has impact and feels important.
 
@@ -53,15 +62,23 @@ The number of pets actively kept on the player's base should be kept fairly smal
 - align to the gathering stuff??
 - advanced types??
 
-### Equipment
+### Cold Storage
+Pets can be kept in storage. This makes any gathering/crafting bonuses inactive.
 
-### Skills
-Pet skills will affect resource gathering or crafting and will be randomly assigned from a pool of possible skills when the pet is created.
+Inactive pets may be consumed to create new pets.
+
+## Equipment
+Both characters and pets can have equipment.
+
+## Skills
+Skills will affect resource gathering, crafting, or be an active combat skill.
+
+For pets, skills will be randomly assigned from a pool of possible skills when the pet is created. Jobs will have a static list of skills.
 
 Skill bonuses should apply only when the pet is an active member of the base.
 
-#### Gathering Skills
-If a pet with a gathering skill is destroyed or stored in cryo, its skill bonus should only apply to the uncollected resources from periods that it was active (ie you stored 3 days but swapped the pet out 1.5 days in; 1.5days should have its bonus applied).
+### Gathering Skills
+If a pet with a gathering skill is destroyed or stored, its skill bonus should only apply to the uncollected resources from periods that it was active (ie you stored 3 days but swapped the pet out 1.5 days in; 1.5days should have its bonus applied).
 
 | Skill             | Effect              | %       | Rarity   |
 | ----------------- |:-------------------:| -------:| --------:|
@@ -72,14 +89,15 @@ If a pet with a gathering skill is destroyed or stored in cryo, its skill bonus 
 | Mountaineer       | Allows foraging in the mt | 1 - 1 | Rare |
 | Fisher            | Allows fishing      | 1 - 1   | Rare |
 
-#### Crafting Skills
+### Crafting Skills
 Crafting skills may increase the chances of getting a rare result or multiply the output from a craft.
 
-### Cryostorage
-pets can be kept in cryo & combined (consumed) in that state to create new pets.
+[[@TODO - flesh it out]]
+
+### Combat Skills
+[[@TODO - flesh it out]]
 
 ## The Base
-
 ## Gathering Resources
 Gathering resources once an hour is how players can build their base up, participate in the economy, and find rare materials/events.
 
@@ -125,9 +143,5 @@ gw2 style, get it once & you get credit
 - unlock pets
 - unlock recipes
 
-## Events
-Events are randomly given quests. Once obtained, the player has `time` to begin the quest. Once begun, a pet or facility will be committed to the event until it is completed.
-
-- some examples pls.
-- commit a resource for X hours (bringing it offline for normal resource harvesting) & it gets back x2 what it otherwise would have gotten for that period
-	- alt, it gives half of what it would have given, but rare item chance is dramatically increased
+## Quests
+[[@TODO - flesh out]]
